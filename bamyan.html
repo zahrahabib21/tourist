@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kabul Province Info</title>
+
+  <link rel="icon" href="img/favicon_io (7)/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io (7)/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io (7)/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io (7)/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon_io (7)/site.webmanifest">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+    }
+
+    
+    header {
+      background-color: #464645;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: relative;
+    }
+
+    .logo img {
+      width: 80px;
+    }
+
+    .title {
+      color: #f4e04d;
+      font-size: 1.8rem;
+      font-weight: bold;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #f4e04d;
+    }
+
+   
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+   
+    .content {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .content h2, .content h3 {
+      text-align: center;
+      color: #f4e04d;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .images img {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    .guides {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .guide-card {
+      background-color: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+    }
+
+    .guide-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .guide-card h4 {
+      color: #f4e04d;
+    }
+
+    
+    /* Responsive Navbar */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 30px;
+        background-color: #464645;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 200px;
+        display: none;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .nav-links a {
+        margin: 10px 0;
+        display: block;
+      }
+
+      #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .title {
+        font-size: 1.3rem;
+        left: 45%;
+      }
+    }
+
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .image-block {
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+      position: relative;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .programs {
+      background-color: white;
+      padding: 25px 20px;
+      width: 80%;
+      position: relative;
+      top: -40px;
+      z-index: 2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    .left-align {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    .right-align {
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    .programs h2 {
+      color: #1c3d5a;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .programs p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    
+    .programs a {
+      color: #1c3d5a;
+      text-decoration: none;
+    }
+
+    .programs a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+    background-color: #343333;
+    color:#f4e04d;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer p {
+    font-size: 20px;
+
+}
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 60px;
+      }
+
+      .programs {
+        width: 90%;
+        margin: auto;
+        top: -30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <div class="logo">
+      <img src="img/z__5_-removebg-preview.png" alt="Logo">
+    </div>
+    <h1 class="title">Zara Explore</h1>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="info.html">Province List</a>
+        <a href="contect.html">Contact</a>
+      </nav>
+  </header>
+
+ 
+  <section class="content">
+    <h2>About Bamyan</h2>
+    <p>
+        Bamyan is a central Afghan province famous for its stunning natural landscapes and ancient Buddhist heritage. It was home to the famous Buddhas of Bamyan, which were destroyed in 2001 but still draw cultural and historical interest.
+    </p>
+
+    <div class="images">
+      <img src="img/ss.jpg" alt="Kabul Image 1">
+      <img src="img/vv.jpg" alt="Kabul Image 2">
+      <img src="img/tt.jpg" alt="Kabul Image 3">
+    </div>
+
+    <br>
+    <br>
+    
+
+    <h2>Local Guides</h2>
+    <div class="container">
+        <div class="image-block">
+          <img src="img/cc.jpg" width="300px" height="300px" alt="Image 1" class="main-image">
+          <div class="programs right-align">
+            <h2>Helai Habib</h2>
+            <p> <strong>Languages</strong> : Pashto,Arabic,Dari</p>
+            <p> <strong>Email</strong>  : helaikhan202@gamil.com </p>
+            <p> <strong>whatsapp</strong>  : whatsapp:+93789334543 </p>
+          </div>
+        </div>
+
+    
+        <div class="image-block">
+          <img src="img/ee.jpg" width="300px" height="300px" alt="Image 2" class="main-image">
+          <div class="programs left-align">
+            <h2>Aly khan</h2>
+            <p> <strong>Languages</strong> : Pashto,English,Dari, </p>
+            <p> <strong>Email</strong>  : khan3303@gamil.com </p>
+            <p> <strong>whatsapp</strong>  : whatsapp:+93789664577 </p>
+          </div>
+        </div>
+
+        <div class="image-block">
+            <img src="img/ff.jpg" width="300px" height="300px" alt="Image 1" class="main-image">
+            <div class="programs right-align">
+              <h2>Ahmad Rahimi</h2>
+              <p> <strong>Languages</strong> : Pashto,Turkish,Dari </p>
+              <p> <strong>Email</strong>  : ahmadkhan4343@gamil.com </p>
+              <p> <strong>whatsapp</strong>  : whatsapp:+93789665645 </p>
+        
+            </div>
+          </div>
+  
+
+          <div class="image-block">
+            <img src="img/hh.jpg" width="300px" height="300px" alt="Image 2" class="main-image">
+            <div class="programs left-align">
+              <h2>Qayoum saidi</h2>
+              <p> <strong>Languages</strong> : Pashto,English,Chines </p>
+              <p> <strong>Email</strong>  : hass4343@gamil.com </p>
+              <p> <strong>whatsapp</strong>  : whatsapp:+93789664545 </p>
+            </div>
+          </div>
+  </section>
+
+  
+  <footer>
+    <p> Explore &copy; 2025 | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

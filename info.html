@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zara Explore</title>
+
+
+  <link rel="icon" href="img/favicon_io (7)/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io (7)/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io (7)/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io (7)/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon_io (7)/site.webmanifest">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+   
+    @keyframes backgroundColorChange {
+      0% {
+        background-color: #cbd5da; 
+      }
+      50% {
+        background-color: #656967; 
+      }
+      100% {
+        background-color: #c1c10bc5; 
+      }
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      animation: backgroundColorChange 5s infinite alternate; 
+    }
+
+   
+    header {
+      background-color: #464645;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 90px;
+      margin-right: 10px;
+    }
+
+    .title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #f4e04d;
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #f4e04d;
+    }
+
+   
+    .province-section {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #1c1c1c;
+      flex: 1;
+      animation: backgroundColorChange 5s infinite alternate; 
+    }
+
+    .province-section h2 {
+      font-size: 2rem;
+      color: #f4e04d;
+      margin-bottom: 30px;
+    }
+
+    .province-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .province-card {
+      background: linear-gradient(45deg, #444, #666);
+      color: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.6s ease, transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      text-decoration: none;
+    }
+
+    .province-card:hover {
+      background: linear-gradient(45deg, #f4e04d, #f4c10b);
+      color: #2c2c2c;
+      transform: scale(1.05);
+    }
+
+    
+    footer {
+      background-color: #343333;
+      color: #f4e04d;
+      padding: 30px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    footer p {
+      font-size: 20px;
+    }
+
+    
+    @media (max-width: 768px) {
+      .province-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .title {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <header>
+    <div class="logo">
+      <img src="img/z__5_-removebg-preview.png" alt="Logo">
+    </div>
+    <h1 class="title">Zara Explore</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="contect.html">Contact</a>
+    </nav>
+  </header>
+
+  
+  <div class="province-section">
+    <h2>Choose a Province</h2>
+    <div class="province-cards">
+      <a href="kabul.html" class="province-card">Kabul</a>
+      <a href="herat.html" class="province-card">Herat</a>
+      <a href="panjshir.html" class="province-card">Panjshir</a>
+      <a href="nuristan.html" class="province-card">Nuristan</a>
+      <a href="bamyan.html" class="province-card">Bamyan</a>
+    </div>
+  </div>
+
+
+  <footer>
+    <p>Explore © 2025 | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

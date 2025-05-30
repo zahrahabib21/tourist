@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zara Explore</title>
+
+  
+  <link rel="icon" href="img/favicon_io (7)/android-chrome-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io (7)/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io (7)/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io (7)/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon_io (7)/site.webmanifest">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1c1c1c;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #464645;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 90px;
+      margin-right: 10px;
+    }
+
+    .title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #f4e04d;
+        font-size: 1.6rem;
+        font-weight: bold;
+      animation: titleGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+      0%, 100% { text-shadow: 0 0 10px #f4e04d; }
+      50% { text-shadow: 0 0 20px #eeece1, 0 0 30px #f4e04d; }
+    }
+
+
+    .logo h1 {
+      font-size: 1.5rem;
+      color: #f4e04d;
+      
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #f4e04d;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 300px;
+      background-image: url('img/aa_n.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .left::after {
+      content: "Welcome to Afghanistan";
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.8rem;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 300px;
+      background-color: #fff;
+      color: #2c2c2c;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: none;
+    }
+
+    form.active {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #f4e04d;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d4c036;
+    }
+
+    .link-switch {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .link-switch a {
+      color: #007BFF;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+
+      .left::after {
+        font-size: 1.2rem;
+      }
+    }
+
+
+    footer {
+    background-color: #343333;
+    color:#f4e04d;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer p {
+    font-size: 20px;
+
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/z__5_-removebg-preview.png" alt="Logo">
+    </div>
+    <h1 class="title">Zara Explore</h1>
+     <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="contect.html">Contact</a>
+      <a href="info.html">Choose a Province</a>
+    </nav>
+  </header>
+
+  <div class="main">
+    <div class="left"></div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Explore © 2025 | All rights reserved.</p>
+   </footer>
+
+  <script>
+    function showSignup() {
+      document.getElementById("signinForm").classList.remove("active");
+      document.getElementById("signupForm").classList.add("active");
+    }
+
+    function showSignin() {
+      document.getElementById("signupForm").classList.remove("active");
+      document.getElementById("signinForm").classList.add("active");
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const user = document.getElementById('loginUser').value;
+      const pass = document.getElementById('loginPass').value;
+
+      if (user && pass) {
+        window.location.href = "info.html";
+      } else {
+        alert("Please fill in all fields.");
+      }
+    }
+
+    function handleSignup(event) {
+      event.preventDefault();
+      const name = document.getElementById('signupName').value;
+      const email = document.getElementById('signupEmail').value;
+      const pass = document.getElementById('signupPass').value;
+
+      if (name && email && pass) {
+        window.location.href = "info.html";
+      } else {
+        alert("Please fill in all fields.");
+      }
+    }
+  </script>
+
+</body>
+</html>
